@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load model
-model = pickle.load(open("weight_loss_model.pkl", "rb"))
+model = pickle.load(open("lasso_model.pkl", "rb"))
 
 st.title("🏋️ Personalized Fitness Predictor")
 
@@ -16,3 +16,4 @@ if st.button("Predict Weight Loss"):
     input_data = np.array([[age, weight, height]])
     prediction = model.predict(input_data)
     st.success(f"Predicted weight loss: {prediction[0]:.2f} kg")
+
